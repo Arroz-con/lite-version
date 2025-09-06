@@ -459,6 +459,9 @@ do
         function Utils.GetCharacter()
             return localPlayer.Character or localPlayer.CharacterAdded:Wait()
         end
+        function Utils.GetHumanoid()
+            return (Utils.GetCharacter():WaitForChild('Humanoid'))
+        end
         function Utils.GetHumanoidRootPart()
             return (Utils.GetCharacter():WaitForChild('HumanoidRootPart'))
         end
@@ -1256,8 +1259,8 @@ do
         local localPlayer = Players.LocalPlayer
         local getconstants = getconstants or debug.getconstants
         local getgc = getgc or get_gc_objects or debug.getgc
-        local get_thread_identity = getthreadidentity or get_thread_identity or gti or getidentity or syn.get_thread_identity or fluxus.get_thread_identity
-        local set_thread_identity = setthreadidentity or set_thread_context or sti or setthreadcontext or setidentity or syn.set_thread_identity or fluxus.set_thread_identity
+        local get_thread_identity = getthreadidentity or get_thread_identity or gti or getidentity
+        local set_thread_identity = setthreadidentity or set_thread_context or sti or setthreadcontext or setidentity
         local SetLocationTP
         local rng = Random.new()
 
@@ -1776,6 +1779,7 @@ do
         local Players = cloneref(game:GetService('Players'))
         local Bypass = (require(ReplicatedStorage:WaitForChild('Fsys')).load)
         local ClientData = (Bypass('ClientData'))
+        local RouterClient = (Bypass('RouterClient'))
         local self = {}
         local localPlayer = Players.LocalPlayer
         local getFullgrownPets = function(mega)
@@ -1849,7 +1853,7 @@ do
                 end
 
                 if #fusionReady >= 4 then
-                    ReplicatedStorage.API:FindFirstChild('PetAPI/DoNeonFusion'):InvokeServer({
+                    RouterClient.get('PetAPI/DoNeonFusion'):InvokeServer({
                         unpack(fusionReady),
                     })
                     task.wait()
@@ -2756,10 +2760,8 @@ do
                 end)
             end)
 
-            local queueOnTeleport = (syn and syn.queue_on_teleport) or queue_on_teleport
-
-            if queueOnTeleport then
-                queueOnTeleport('            game:Shutdown()\n        ')
+            if queue_on_teleport then
+                queue_on_teleport('            game:Shutdown()\n        ')
             end
         end
         function self.Start()
@@ -3380,7 +3382,7 @@ do
         local Terrain = (Workspace:WaitForChild('Terrain'))
         local Lighting = (cloneref(game:GetService('Lighting')))
         local self = {}
-        local TURN_ON = false
+        local TURN_ON = true
         local lowSpecTerrain = function()
             Terrain.WaterReflectance = 0
             Terrain.WaterTransparency = 1
@@ -3435,14 +3437,13 @@ do
             lowSpecLighting()
             Lighting:ClearAllChildren()
             Terrain:Clear()
-
-            for _, v in pairs(Workspace:GetDescendants())do
-                lowSpecTextures(v)
-            end
-
             Workspace.DescendantAdded:Connect(function(v)
                 lowSpecTextures(v)
             end)
+
+            for _, v in Workspace:GetDescendants()do
+                lowSpecTextures(v)
+            end
         end
 
         return self
@@ -4059,7 +4060,16 @@ do
                 return
             end
 
-            localPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+            local humanoid = Utils.GetHumanoid()
+
+            humanoid.JumpPower = 200
+
+            humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+            task.wait()
+
+            humanoid.JumpPower = 40
+
+            task.wait(20)
         end
         local getUpFromSitting = function()
             ReplicatedStorage.API['AdoptAPI/ExitSeatStates']:FireServer()
@@ -4136,27 +4146,7 @@ do
             end
         end
         local waitForJumpingToFinish = function(ailment, petUnique)
-            Utils.PrintDebug(string.format('\u{23f3} Waiting for %s to finish \u{23f3}', tostring(string.upper(ailment))))
-
-            local stuckCount = tick()
-            local isStuck = false
-
-            repeat
-                babyJump()
-                task.wait(0.5)
-
-                local taskActive = ClientData.get_data()[localPlayer.Name].ailments_manager.ailments[petUnique] and ClientData.get_data()[localPlayer.Name].ailments_manager.ailments[petUnique][ailment] and true or false
-
-                task.wait(0.5)
-
-                isStuck = (tick() - stuckCount) >= 120 and true or false
-            until not taskActive or isStuck
-
-            if isStuck then
-                Utils.PrintDebug(string.format('\u{26d4} %s ailment is stuck so exiting task \u{26d4}', tostring(ailment)))
-            else
-                Utils.PrintDebug(string.format('\u{1f389} %s ailment finished \u{1f389}', tostring(ailment)))
-            end
+            babyJump()
         end
         local babyWaitForTaskToFinish = function(ailment)
             Utils.PrintDebug(string.format('\u{23f3} Waiting for BABY %s to finish \u{23f3}', tostring(string.upper(ailment))))
