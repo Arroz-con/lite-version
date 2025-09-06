@@ -5088,7 +5088,7 @@ do
         local baitboxCount = 0
         local strollerId = GetInventory.GetUniqueId('strollers', 'stroller-default')
         local tryRedeemHomepass = function()
-            local count = ClientData.get_data()[localPlayer.Name].battle_pass_manager.house_pets_2025_pass_1.rewards_claimed
+            local count = ClientData.get_data()[localPlayer.Name].battle_pass_manager.house_pets_2025_pass_2.rewards_claimed
 
             if not count then
                 return
@@ -5096,7 +5096,7 @@ do
             if count >= 20 then
                 if Utils.BucksAmount() >= 1500 then
                     print('max redeemed. need to reset homepass')
-                    RouterClient.get('BattlePassAPI/AttemptBattlePassReset'):InvokeServer('house_pets_2025_pass_1')
+                    RouterClient.get('BattlePassAPI/AttemptBattlePassReset'):InvokeServer('house_pets_2025_pass_2')
 
                     return
                 end
@@ -5106,7 +5106,7 @@ do
                 return
             end
 
-            RouterClient.get('BattlePassAPI/ClaimReward'):InvokeServer('house_pets_2025_pass_1', count + 1)
+            RouterClient.get('BattlePassAPI/ClaimReward'):InvokeServer('house_pets_2025_pass_2', count + 1)
         end
         local tryFeedAgePotion = function()
             if not getgenv().SETTINGS.FOCUS_FARM_AGE_POTION then
