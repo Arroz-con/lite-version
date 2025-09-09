@@ -3382,7 +3382,7 @@ do
         local Terrain = (Workspace:WaitForChild('Terrain'))
         local Lighting = (cloneref(game:GetService('Lighting')))
         local self = {}
-        local TURN_ON = true
+        local TURN_ON = getgenv().SETTINGS.POTATO_MODE or false
         local lowSpecTerrain = function()
             Terrain.WaterReflectance = 0
             Terrain.WaterTransparency = 1
@@ -4105,8 +4105,10 @@ do
             Utils.PrintDebug(string.format('mystery id: %s', tostring(mysteryId)))
 
             local ailmentsList = {}
+            local petData = ClientData.get_data()[localPlayer.Name].ailments_manager.ailments[petUnique]
+            local components = petData[mysteryId]['components']['mystery']['components']
 
-            for i, _ in ClientData.get_data()[localPlayer.Name].ailments_manager.ailments[petUnique][mysteryId]['components']['mystery']['components']do
+            for i, v in components do
                 table.insert(ailmentsList, i)
             end
 
@@ -4410,26 +4412,17 @@ do
                     ['unique_id'] = toyId,
                 },
             }
-            local count = 0
 
-            repeat
-                Utils.PrintDebug('\u{1f9b4} Throwing toy \u{1f9b4}')
-                ReplicatedStorage.API:FindFirstChild('PetObjectAPI/CreatePetObject'):InvokeServer(unpack(args))
-                task.wait(10)
+            Utils.PrintDebug('\u{1f9b4} Throwing toy \u{1f9b4}')
+            ReplicatedStorage.API:FindFirstChild('PetObjectAPI/CreatePetObject'):InvokeServer(unpack(args))
 
-                local taskActive = ClientData.get_data()[localPlayer.Name].ailments_manager.ailments[petUnique] and ClientData.get_data()[localPlayer.Name].ailments_manager.ailments[petUnique][ailment] and true or false
+            local tool = Utils.GetCharacter():WaitForChild('SqueakyToyTool', 30)
 
-                count = count + 1
-            until not taskActive or count >= 6
-
-            if count >= 6 then
-                Utils.PrintDebug('Play task got stuck so requiping pet')
-                Utils.ReEquipPet(Ailment.whichPet)
+            if not tool then
+                Utils.PrintDebug("\u{26a0}\u{fe0f} Toy didn't appear so exiting play ailment \u{26a0}\u{fe0f}")
 
                 return false
             end
-
-            Utils.PrintDebug(string.format('\u{1f9b4} Finished play task on %s \u{1f9b4}', tostring(Ailment.whichPet)))
 
             return true
         end
@@ -5414,7 +5407,7 @@ do
                     tryRedeemHomepass()
                     UpdateTextEvent:Fire()
 
-                    local waitTime = rng:NextNumber(5, 15)
+                    local waitTime = rng:NextNumber(5, 10)
 
                     baitboxCount = baitboxCount + waitTime
 
@@ -5461,7 +5454,8 @@ do
 end
 
 getgenv().SETTINGS = {
-    DEBUG_MODE = true,
+    DEBUG_MODE = false,
+    POTATO_MODE = true,
     EVENT = {
         DO_MINIGAME = true,
         IS_AUTO_BUY = false,
@@ -5531,9 +5525,11 @@ local RouterClient = (Bypass('RouterClient'))
 local localPlayer = Players.LocalPlayer
 local NewsApp = (localPlayer:WaitForChild('PlayerGui'):WaitForChild('NewsApp'))
 
-repeat
-    task.wait(5)
-until NewsApp.Enabled or localPlayer.Character
+if not NewsApp.Enabled then
+    repeat
+        task.wait(5)
+    until NewsApp.Enabled or localPlayer.Character
+end
 
 for i, v in debug.getupvalue(RouterClient.init, 7)do
     v.Name = i
