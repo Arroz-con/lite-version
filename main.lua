@@ -11382,6 +11382,7 @@ Check the Developer Console for more information.]],
         local DailiesNetService = (require(modules:WaitForChild('Dailies'):WaitForChild('DailiesNetService')))
         local self = {}
         local localPlayer = Players.LocalPlayer
+        local rng = Random.new(DateTime.now().UnixTimestamp)
         local jobId = game.JobId
         local baitboxCount = 0
         local strollerId = GetInventory.GetUniqueId('strollers', 'stroller-default')
@@ -11702,9 +11703,11 @@ Check the Developer Console for more information.]],
 
             tryFeedAgePotion()
 
-            baitboxCount = baitboxCount + 5
+            local waitTime = rng:NextInteger(1, 10)
 
-            task.wait(5)
+            baitboxCount = baitboxCount + waitTime
+
+            task.wait(waitTime)
         end
 
         function self.Init()
