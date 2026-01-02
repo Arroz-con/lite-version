@@ -12374,6 +12374,387 @@ Check the Developer Console for more information.]],
 
         return self
     end
+    function __DARKLUA_BUNDLE_MODULES.B()
+        return {
+            '{29580925-384D-4CF6-810A-5B2FBEBE14EF}',
+            '{AFFECD3D-9FCD-4822-BDF8-1B7F589620DD}',
+            '{F8FAEF3D-A8EC-4FC6-B6DA-9900D9F01089}',
+            '{53C81678-DDD1-410F-9476-0A1AFD17B22D}',
+            '{96EB009D-84A2-464B-925E-41E269B5D7E4}',
+            '{C61B5F35-B5E6-4DDE-B9CA-8C5CDE82D3F5}',
+            '{FE0C85D8-2E11-46BA-BE97-9EC67E96ABB8}',
+            '{487EE748-30B2-40A5-AEAC-2724E29C6C6D}',
+            '{54E9E593-8C0E-4120-9637-83B0BA891573}',
+            '{28F6FD49-55C2-4E45-88F3-E62344AEE010}',
+            '{94D2643C-32DC-4D5F-9350-BA5BD54BCA23}',
+            '{4B0E202F-743E-46C3-A538-CAAABE3D6A76}',
+            '{0447C188-1620-4CE4-897D-E34CDBE3F30D}',
+            '{374FCE6C-D73A-4E68-AA7F-8954D47A913E}',
+            '{0F4D8710-8B26-4D9C-92EC-FFAB5CFEDA15}',
+            '{D85AC2E0-131F-4316-B8CF-0CD0BFAC639D}',
+            '{5926D161-4B98-4901-8A66-6178F21B616C}',
+            '{1479F2D4-D712-4B53-8B24-546270239BE7}',
+            '{45E5C75E-DB43-4196-9B2A-6A3C044C6095}',
+            '{600EB06A-F13D-411D-BEB3-E04E93ED4276}',
+            '{FD6318F0-8A5F-41CF-9B91-64EBBBCB3E98}',
+            '{B0390D1A-AAFF-45F9-823E-9DBF1EE671DF}',
+            '{D1B20364-78F5-4CCC-A510-E40A8D625D16}',
+            '{F72AED52-624E-43BA-AF8E-7C3C311B93D7}',
+            '{0836BB00-2107-49A6-8544-72FC3EECC742}',
+            '{2883E3B9-AEB4-4577-A1E6-D75BD7D00042}',
+            '{8B70133A-0EDA-439B-B41D-26B9EE5B824D}',
+            '{5FD5BDBD-5847-4EFD-9DF1-0AB7B94A3548}',
+            '{F72BD7C6-B22D-4E5C-AA9C-C0FE8F034E43}',
+            '{B6510D79-459E-40A7-88A1-06EECF7DFEDD}',
+            '{850FA732-1759-41FD-8D11-A966F663DC54}',
+            '{A76214EC-C75E-4E91-B515-32CF008CA73F}',
+            '{11496169-8138-4EB2-9883-9F0453297D84}',
+            '{D356DB30-2CDC-48D8-AB28-F9E1C4C8E82D}',
+            '{51E924AC-12DF-46F8-A77C-C2756C38AD3B}',
+            '{A33B95DC-4636-4FB9-81E1-098C819359A8}',
+            '{0DBD86AB-EDAD-4C5F-B64A-E879935418FD}',
+            '{69372C32-4F4E-4786-B973-36405115DC84}',
+            '{C4194D7B-54B5-4B35-B262-1B700143DB56}',
+            '{1F5105D1-7F27-4C3F-88F8-DAB5AC6F80A7}',
+            '{5A651C27-4680-40DB-968C-71B89B56F3D0}',
+            '{B6709EA9-0B13-47F5-9022-524426FC2B20}',
+            '{71CB1A2A-6433-496F-A75D-79B57EA2020D}',
+            '{45912694-2CF8-4B46-9222-B4E052EC74FC}',
+            '{A6C07949-FE1D-4C8A-9234-782981398813}',
+            '{CC47FF49-48FD-444E-8F70-BFB36EB4E1DE}',
+            '{6C05E92C-38EB-4033-B610-4503E5262FDF}',
+            '{7A2585D3-0477-40CD-B6FF-BD781A3B5777}',
+            '{248879AA-6B47-4BCF-AFC0-161C2EBFF6AD}',
+            '{537FCB8D-0868-463D-B2A1-A85E3F9507A3}',
+            '{8897445D-6138-4BD6-8DA1-1F02ECFE5898}',
+            '{4112DDAB-4A73-4C16-A75C-DD260D6D0155}',
+            '{65EF0557-0D8E-4B74-AFD8-FC5DB243EDB8}',
+            '{39592C2B-0CC3-4BDD-9E64-00846F06C629}',
+            '{14F3C7DB-D67E-4288-9D94-AB33653FD928}',
+            '{DD193776-16EC-4550-B696-19E19CE313D4}',
+            '{4FE802B6-9D8D-4CAA-B07A-775154792D1A}',
+            '{87A78497-E137-47E5-AE8A-5E4C0F30D90A}',
+            '{63E116B6-1955-4B06-B28F-3113E0760583}',
+            '{08D592C6-8F94-435E-98CD-D038E23CF236}',
+            '{F0B27251-FFE7-4A70-9077-80D73E10BD1E}',
+            '{439925AF-0A96-40F3-8707-D5A65AA605AF}',
+            '{381C38F4-4B07-4F2E-A12E-AF6328F96A54}',
+            '{25DA2E1D-7191-4B7F-AB26-5EFECB267307}',
+            '{154F7871-BCA0-4691-9210-AD6D76103119}',
+            '{808A9B20-FA50-412A-9A5D-D728B1D355A9}',
+            '{AE2F9B5B-589F-4A12-B4A5-0912FFE8C463}',
+            '{04A431CF-78AD-4200-9B3E-8DA02A6DA347}',
+            '{F0F44CAC-FF90-4B94-A996-5094CECF1531}',
+            '{081D2B7B-79A6-4330-93EC-C36DF19BBC93}',
+            '{24236D55-6152-4783-B736-9CAA56F6F655}',
+            '{33430CD2-A47B-4987-ACEA-5EA4ABF9AAE0}',
+            '{48BB1D7E-0B33-4171-A423-A911FE9A4972}',
+            '{177D7587-F672-49D5-85D1-090AA2AAAB29}',
+            '{1B7E9043-B129-4341-BDB9-FA83CE503F5C}',
+            '{82B7AF91-D7FD-48D5-BEA1-A7048595647E}',
+            '{1A218809-DBE4-4542-80B2-2B585D33CEC6}',
+            '{449145AC-B3DC-4FDD-9C9F-5FFF5F2FA183}',
+            '{4A3B540E-FC78-4095-AFDA-F560F263AD13}',
+            '{8F6C3881-F732-42C9-936A-5852D3A194B4}',
+            '{084B9A25-9B24-461B-8FEB-1A071D2800FB}',
+            '{6F890B4D-2BB8-446F-A492-21C61EC7D36D}',
+            '{9B4F9569-4463-47AB-B753-0DBF64B56883}',
+            '{30189A3D-F6CE-4B86-A19C-C71E64541796}',
+            '{2FAC02AF-1E80-4890-BC34-C5D8F22F12F2}',
+            '{6147E9F3-8FDA-45AF-AF7B-96245CA32096}',
+            '{AB788250-8C62-45AF-BE63-6493F5363116}',
+            '{8743B7A9-257B-48DF-8DB0-0F4FD057A4B0}',
+            '{3C929F9E-9C60-4844-B6A6-C5AB16B89030}',
+            '{2FA1E614-9B22-495E-8543-A28A449662C0}',
+            '{A5D4CB92-D091-41DF-A0F5-968778175398}',
+            '{301B6795-D383-41BC-AB6C-6A4C4CAA8EDF}',
+            '{5E5EAA7A-C7C4-4AB0-AB22-DBFD967098BF}',
+            '{0217C4CB-EBE3-4EAD-BAA8-801D1DD0BD8F}',
+            '{6DEDCEB2-62B4-4259-BDFF-A3FA56DF71A7}',
+            '{93479D49-84B0-4410-B39D-D2553FFFFCF0}',
+            '{93F23433-BA8C-49CF-B1A8-D8FDA736623A}',
+            '{FCE711AB-1097-47DF-AFD5-E3D8BA0B4BA5}',
+            '{65E06DD8-CCCB-4DFC-ADED-EC29B7890D53}',
+            '{1E4A9A9E-F945-4A6A-A777-EA765AC9892D}',
+            '{8BEADFD7-FB96-4F3D-A2A3-32FC758A60CE}',
+            '{D194622B-F101-47D3-8974-7610FB3830AE}',
+            '{40D33237-E99B-4BA3-A0BE-7AEE3AD7B607}',
+            '{2EEF9B08-10D5-40A6-B563-94FF012868D9}',
+            '{677BBA18-0BDA-4A19-92F9-8C8DF6A11E30}',
+            '{5C9A79E8-A97B-4DD9-8B8B-7DAD80B541E0}',
+            '{505165ED-12ED-4FC3-8E0B-DE786471F388}',
+            '{D5EBC9DB-8E7A-45AD-BF8F-F93703B61F20}',
+            '{137708F4-430A-4C0D-A63C-B75A59C5EB2E}',
+            '{832B63F3-FBA5-4380-99DB-78CFB9F87D6F}',
+            '{27AE43F6-30C5-477C-BD53-2511CD23C5CA}',
+            '{FC8810F5-8C12-46AC-9260-12E9276199B2}',
+            '{E774C005-3B66-4736-8E35-421710DB25FB}',
+            '{A2CBBB92-06FB-4CB3-A81F-6926203BD34E}',
+            '{DEB255CE-6405-43A3-81AD-DCAA8A0A707C}',
+            '{B097C8D5-6034-42F2-ABE1-4CEFE35E76FB}',
+            '{FD974ABC-023F-4238-BB26-EA963179D61F}',
+            '{60E33537-47D5-4212-958D-307C17501331}',
+            '{316F5213-D48B-4F4B-8AFB-D18E44ACDDCB}',
+            '{B484E83E-396E-4ACA-828E-0E1121708E88}',
+            '{C8380520-D52C-46F1-A257-ADA9BC410E79}',
+            '{20619AAB-74D9-4F8D-AB89-62DB4130C6A9}',
+            '{EB9C2171-5D89-43AB-BA09-2F6439BF805D}',
+            '{F11CFC7D-3222-4856-AB81-532ADB118D34}',
+            '{50BC1E72-EE91-4332-B707-B24E1622A214}',
+            '{437F2FA1-230F-498F-9276-DE0EF87C3AE1}',
+            '{21119F02-5EB6-4308-B15A-AE086F9605EC}',
+            '{FB967ED2-445C-4B78-8576-5D99AB7AA4B9}',
+            '{81E888FB-BEF4-4F79-AE22-C5F438EF0E4E}',
+            '{E58BFD84-62BE-4A62-A2C8-5D088FB0E6BF}',
+            '{85A9AEA7-5427-4144-AFC1-12DCE9D5ECB7}',
+            '{9989159C-CF88-4D53-A30D-037A337969D3}',
+            '{569DD3EB-30D5-4CDD-85B6-5AA6C886D51C}',
+            '{D0A52723-FF4A-40E5-A6B7-16FC57BF9B9E}',
+            '{3DE5F28B-8893-4BD0-B742-6096E9DDEDB6}',
+            '{ED15A0DF-DEA5-4EE5-91D4-568CF3D13D20}',
+            '{9E8B22FE-410D-4005-8610-B5BEE9058A01}',
+            '{6DAB765F-B559-4BB5-B70B-C868947D1C56}',
+            '{4F764D10-CC2B-447E-9876-DC9259316804}',
+            '{CF994B67-FA40-453E-ADEA-859E4B2C48A3}',
+            '{D07D63E3-184C-41E1-9664-4DD8E26237C6}',
+            '{DD2C92B9-881C-4128-B11D-A92E8873472E}',
+            '{51F28E59-3CEC-46F4-84C3-5D6FD3FBCCF1}',
+            '{80612A9C-FDE0-4CEE-B5F8-8B7DE2E9DC39}',
+            '{A6482191-3E6B-45E0-B1F6-5BE8600C0D46}',
+            '{069AFA82-D910-45A2-AF24-7F33E0237182}',
+            '{40475233-9A85-4BE4-B20F-4C7A2C04C67E}',
+            '{CBE7FE13-7C12-4469-8F0E-B32E7B224B20}',
+            '{57CF0C2B-CB8F-430A-AE09-6A271E46447D}',
+            '{1CA3C55C-E6FF-4632-B023-4AFABBD3175F}',
+            '{5F3EECB5-14F4-4481-BA0D-86EED34D4597}',
+            '{058EE9BE-D9A9-4660-9729-60E2FF891783}',
+            '{0FBAF510-CE97-44B5-B5EE-43B31B642530}',
+            '{E8749084-B9C2-4C1C-8DCA-8DD601B57E99}',
+            '{9A475EE6-2AA9-407F-96B8-AFD73C904E9C}',
+            '{1F104AAC-B4CF-4B9E-8ACA-C72F3B7601D7}',
+            '{82062F93-CB93-48AF-9DEB-AB5385F67173}',
+            '{F6D9E4BE-9433-4563-A10A-9E3684407E20}',
+            '{2BEB302F-EB22-4403-B2E7-F4239A306A9C}',
+            '{E8AD7C9A-C60C-4DE2-A111-A3E8AD26B1D0}',
+        }
+    end
+    function __DARKLUA_BUNDLE_MODULES.C()
+        local ReplicatedStorage = game:GetService('ReplicatedStorage')
+        local Players = game:GetService('Players')
+        local Bypass = (require(ReplicatedStorage:WaitForChild('Fsys')).load)
+        local ContentPacks = (ReplicatedStorage:WaitForChild('SharedModules'):WaitForChild('ContentPacks'))
+        local IceSkating = (ContentPacks:WaitForChild('Winter2025'):WaitForChild('Game'):WaitForChild('IceSkating'))
+        local SleighballClient = (require(ContentPacks.Winter2025.Minigames.SleighballClient))
+        local StarCatchMinigameClient = (require(ContentPacks.Winter2025.Minigames.StarCatchMinigameClient))
+        local IceSkatingNet = (require(IceSkating:WaitForChild('IceSkatingNet')))
+        local ginerbreadIds = __DARKLUA_BUNDLE_MODULES.load('B')
+        local GetInventory = __DARKLUA_BUNDLE_MODULES.load('i')
+        local RouterClient = Bypass('RouterClient')
+        local ClientData = Bypass('ClientData')
+        local Utils = __DARKLUA_BUNDLE_MODULES.load('a')
+        local localPlayer = Players.LocalPlayer
+        local PlayerGui = (localPlayer:WaitForChild('PlayerGui'))
+        local StaticMap = (workspace:WaitForChild('StaticMap'))
+        local MinigameInGameApp = (PlayerGui:WaitForChild('MinigameInGameApp'))
+        local Christmas2025Handler = {}
+        local tryCollectGingerbread = function()
+            for _, v in ipairs(ginerbreadIds)do
+                IceSkatingNet.PickUpGingerbread:fire_server({
+                    interior_name = 'MainMap!Christmas',
+                    gingerbread_id = v,
+                })
+                task.wait(0.1)
+            end
+
+            IceSkatingNet.RedeemPendingGingerbread:fire_server()
+        end
+        local tryExchangeGingerbread = function()
+            local usesLeft = ClientData.get_data()[localPlayer.Name].winter_2025_manager.exchange_kiosk_uses_left
+
+            if usesLeft == 0 then
+                return
+            end
+            if Utils.BucksAmount() < 50000 then
+                return
+            end
+
+            RouterClient.get('WinterEventAPI/UseExchangeKiosk'):InvokeServer()
+        end
+        local startSleighball = function()
+            while SleighballClient.instanced_minigame do
+                local teamColor = SleighballClient.instanced_minigame.team
+                local giftsById = SleighballClient.instanced_minigame.gifts_by_id
+                local gameFolder = SleighballClient.instanced_minigame.game_folder
+
+                if SleighballClient.instanced_minigame.scores[teamColor] >= 10 then
+                    break
+                end
+
+                local giftRoot = giftsById and giftsById[1] and giftsById[1].instance and giftsById[1].instance:FindFirstChild('Root')
+
+                if giftRoot then
+                    Utils.WaitForHumanoidRootPart().CFrame = giftRoot.CFrame
+
+                    task.wait(0.1)
+
+                    Utils.WaitForHumanoidRootPart().Anchored = true
+                end
+
+                local teamGoalPart = gameFolder and gameFolder:FindFirstChild('Goals') and gameFolder.Goals:FindFirstChild(teamColor .. 'Goal')
+
+                if teamGoalPart then
+                    Utils.WaitForHumanoidRootPart().CFrame = gameFolder.Goals[teamColor .. 'Goal'].CFrame
+
+                    task.wait(0.1)
+
+                    Utils.WaitForHumanoidRootPart().Anchored = true
+                end
+
+                task.wait(0.2)
+
+                Utils.WaitForHumanoidRootPart().Anchored = false
+            end
+
+            Utils.WaitForHumanoidRootPart().Anchored = true
+
+            while SleighballClient.instanced_minigame do
+                task.wait(10)
+            end
+
+            print('LEFT MINIGAME Sleighball')
+        end
+        local tryTamePug = function()
+            local yarnBait = GetInventory.GetUniqueId('food', 'winter_2025_yarn_beanie_bait')
+
+            if not yarnBait then
+                Utils.PrintDebug('No yarn bait found in inventory')
+
+                return
+            end
+
+            RouterClient.get('WinterEventAPI/ProgressTaming'):InvokeServer(true)
+        end
+        local startStarCatch = function()
+            local minigameId = StarCatchMinigameClient.instanced_minigame.minigame_id
+
+            while StarCatchMinigameClient.instanced_minigame do
+                local ingameAppController = StarCatchMinigameClient.instanced_minigame.ingame_app_controller
+
+                if ingameAppController and ingameAppController.right_value >= 40 then
+                    break
+                end
+
+                for _, v in StarCatchMinigameClient.instanced_minigame.stars do
+                    if not v.boppable then
+                        continue
+                    end
+
+                    local args = {
+                        minigameId,
+                        'bop_star',
+                        v.id,
+                        workspace:GetServerTimeNow(),
+                    }
+
+                    RouterClient.get('MinigameAPI/MessageServer'):FireServer(unpack(args))
+                    task.wait(0.1)
+                end
+
+                task.wait()
+            end
+        end
+
+        function Christmas2025Handler.Init()
+            print('Initializing Christmas2025Handler')
+            MinigameInGameApp:GetPropertyChangedSignal('Enabled'):Connect(function(
+            )
+                if MinigameInGameApp.Enabled then
+                    if not MinigameInGameApp:WaitForChild('Body', 10) then
+                        return
+                    end
+                    if not MinigameInGameApp.Body:WaitForChild('Middle', 10) then
+                        return
+                    end
+                    if not MinigameInGameApp.Body.Middle:WaitForChild('Container', 10) then
+                        return
+                    end
+                    if not MinigameInGameApp.Body.Middle.Container:WaitForChild('TitleLabel', 10) then
+                        return
+                    end
+                    if MinigameInGameApp.Body.Middle.Container.TitleLabel.Text:match('SLEIGHBALL') then
+                        if localPlayer:GetAttribute('hasStartedFarming') == true then
+                            localPlayer:SetAttribute('StopFarmingTemp', true)
+                            task.wait(10)
+                            startSleighball()
+                        end
+                    elseif MinigameInGameApp.Body.Middle.Container.TitleLabel.Text:match('STARRY BOUNCE') then
+                        if localPlayer:GetAttribute('hasStartedFarming') == true then
+                            localPlayer:SetAttribute('StopFarmingTemp', true)
+                            task.wait(10)
+                            startStarCatch()
+                        end
+                    end
+                end
+            end)
+            StaticMap.sleighball_minigame_state.is_game_active:GetPropertyChangedSignal('Value'):Connect(function(
+            )
+                if StaticMap.sleighball_minigame_state.is_game_active.Value then
+                    if getgenv().SETTINGS.ENABLE_AUTO_FARM == false then
+                        return
+                    end
+                    if localPlayer:GetAttribute('IsTuesdayEvent') == true then
+                        return
+                    end
+                    if localPlayer:GetAttribute('hasStartedFarming') == false then
+                        return
+                    end
+                    if localPlayer:GetAttribute('StopFarmingTemp') == true then
+                        return
+                    end
+
+                    localPlayer:SetAttribute('StopFarmingTemp', true)
+                    Bypass('RouterClient').get('MinigameAPI/AttemptJoin'):FireServer('sleighball', true)
+                end
+            end)
+            StaticMap.star_catch_minigame_state.is_game_active:GetPropertyChangedSignal('Value'):Connect(function(
+            )
+                if StaticMap.star_catch_minigame_state.is_game_active.Value then
+                    if getgenv().SETTINGS.ENABLE_AUTO_FARM == false then
+                        return
+                    end
+                    if localPlayer:GetAttribute('IsTuesdayEvent') == true then
+                        return
+                    end
+                    if localPlayer:GetAttribute('hasStartedFarming') == false then
+                        return
+                    end
+                    if localPlayer:GetAttribute('StopFarmingTemp') == true then
+                        return
+                    end
+
+                    localPlayer:SetAttribute('StopFarmingTemp', true)
+                    Bypass('RouterClient').get('MinigameAPI/AttemptJoin'):FireServer('star_catch', true)
+                end
+            end)
+        end
+        function Christmas2025Handler.Start()
+            tryCollectGingerbread()
+            tryTamePug()
+            RouterClient.get('WeatherAPI/WeatherUpdated').OnClientEvent:Connect(function(
+                dayOrNight
+            )
+                task.wait(2)
+
+                if dayOrNight == 'DAY' then
+                    tryCollectGingerbread()
+                    tryExchangeGingerbread()
+                    tryTamePug()
+                end
+            end)
+        end
+
+        return Christmas2025Handler
+    end
 end
 
 setfpscap(2)
@@ -12471,6 +12852,9 @@ local files = {
     },
     {
         StatsGuiHandler = __DARKLUA_BUNDLE_MODULES.load('A'),
+    },
+    {
+        Christmas2025Handler = __DARKLUA_BUNDLE_MODULES.load('C'),
     },
 }
 
