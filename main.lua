@@ -12544,8 +12544,6 @@ Check the Developer Console for more information.]],
         local Bypass = (require(ReplicatedStorage:WaitForChild('Fsys')).load)
         local ContentPacks = (ReplicatedStorage:WaitForChild('SharedModules'):WaitForChild('ContentPacks'))
         local IceSkating = (ContentPacks:WaitForChild('Winter2025'):WaitForChild('Game'):WaitForChild('IceSkating'))
-        local SleighballClient = (require(ContentPacks.Winter2025.Minigames.SleighballClient))
-        local StarCatchMinigameClient = (require(ContentPacks.Winter2025.Minigames.StarCatchMinigameClient))
         local IceSkatingNet = (require(IceSkating:WaitForChild('IceSkatingNet')))
         local ginerbreadIds = __DARKLUA_BUNDLE_MODULES.load('B')
         local GetInventory = __DARKLUA_BUNDLE_MODULES.load('i')
@@ -12553,9 +12551,6 @@ Check the Developer Console for more information.]],
         local ClientData = Bypass('ClientData')
         local Utils = __DARKLUA_BUNDLE_MODULES.load('a')
         local localPlayer = Players.LocalPlayer
-        local PlayerGui = (localPlayer:WaitForChild('PlayerGui'))
-        local StaticMap = (workspace:WaitForChild('StaticMap'))
-        local MinigameInGameApp = (PlayerGui:WaitForChild('MinigameInGameApp'))
         local Christmas2025Handler = {}
         local tryCollectGingerbread = function()
             for _, v in ipairs(ginerbreadIds)do
@@ -12580,49 +12575,6 @@ Check the Developer Console for more information.]],
 
             RouterClient.get('WinterEventAPI/UseExchangeKiosk'):InvokeServer()
         end
-        local startSleighball = function()
-            while SleighballClient.instanced_minigame do
-                local teamColor = SleighballClient.instanced_minigame.team
-                local giftsById = SleighballClient.instanced_minigame.gifts_by_id
-                local gameFolder = SleighballClient.instanced_minigame.game_folder
-
-                if SleighballClient.instanced_minigame.scores[teamColor] >= 10 then
-                    break
-                end
-
-                local giftRoot = giftsById and giftsById[1] and giftsById[1].instance and giftsById[1].instance:FindFirstChild('Root')
-
-                if giftRoot then
-                    Utils.WaitForHumanoidRootPart().CFrame = giftRoot.CFrame
-
-                    task.wait(0.1)
-
-                    Utils.WaitForHumanoidRootPart().Anchored = true
-                end
-
-                local teamGoalPart = gameFolder and gameFolder:FindFirstChild('Goals') and gameFolder.Goals:FindFirstChild(teamColor .. 'Goal')
-
-                if teamGoalPart then
-                    Utils.WaitForHumanoidRootPart().CFrame = gameFolder.Goals[teamColor .. 'Goal'].CFrame
-
-                    task.wait(0.1)
-
-                    Utils.WaitForHumanoidRootPart().Anchored = true
-                end
-
-                task.wait(0.2)
-
-                Utils.WaitForHumanoidRootPart().Anchored = false
-            end
-
-            Utils.WaitForHumanoidRootPart().Anchored = true
-
-            while SleighballClient.instanced_minigame do
-                task.wait(10)
-            end
-
-            print('LEFT MINIGAME Sleighball')
-        end
         local tryTamePug = function()
             local yarnBait = GetInventory.GetUniqueId('food', 'winter_2025_yarn_beanie_bait')
 
@@ -12634,108 +12586,9 @@ Check the Developer Console for more information.]],
 
             RouterClient.get('WinterEventAPI/ProgressTaming'):InvokeServer(true)
         end
-        local startStarCatch = function()
-            local minigameId = StarCatchMinigameClient.instanced_minigame.minigame_id
-
-            while StarCatchMinigameClient.instanced_minigame do
-                local ingameAppController = StarCatchMinigameClient.instanced_minigame.ingame_app_controller
-
-                if ingameAppController and ingameAppController.right_value >= 40 then
-                    break
-                end
-
-                for _, v in StarCatchMinigameClient.instanced_minigame.stars do
-                    if not v.boppable then
-                        continue
-                    end
-
-                    local args = {
-                        minigameId,
-                        'bop_star',
-                        v.id,
-                        workspace:GetServerTimeNow(),
-                    }
-
-                    RouterClient.get('MinigameAPI/MessageServer'):FireServer(unpack(args))
-                    task.wait(0.1)
-                end
-
-                task.wait()
-            end
-        end
 
         function Christmas2025Handler.Init()
             print('Initializing Christmas2025Handler')
-            MinigameInGameApp:GetPropertyChangedSignal('Enabled'):Connect(function(
-            )
-                if MinigameInGameApp.Enabled then
-                    if not MinigameInGameApp:WaitForChild('Body', 10) then
-                        return
-                    end
-                    if not MinigameInGameApp.Body:WaitForChild('Middle', 10) then
-                        return
-                    end
-                    if not MinigameInGameApp.Body.Middle:WaitForChild('Container', 10) then
-                        return
-                    end
-                    if not MinigameInGameApp.Body.Middle.Container:WaitForChild('TitleLabel', 10) then
-                        return
-                    end
-                    if MinigameInGameApp.Body.Middle.Container.TitleLabel.Text:match('SLEIGHBALL') then
-                        if localPlayer:GetAttribute('hasStartedFarming') == true then
-                            localPlayer:SetAttribute('StopFarmingTemp', true)
-                            task.wait(10)
-                            startSleighball()
-                        end
-                    elseif MinigameInGameApp.Body.Middle.Container.TitleLabel.Text:match('STARRY BOUNCE') then
-                        if localPlayer:GetAttribute('hasStartedFarming') == true then
-                            localPlayer:SetAttribute('StopFarmingTemp', true)
-                            task.wait(10)
-                            startStarCatch()
-                        end
-                    end
-                end
-            end)
-            StaticMap.sleighball_minigame_state.is_game_active:GetPropertyChangedSignal('Value'):Connect(function(
-            )
-                if StaticMap.sleighball_minigame_state.is_game_active.Value then
-                    if getgenv().SETTINGS.ENABLE_AUTO_FARM == false then
-                        return
-                    end
-                    if localPlayer:GetAttribute('IsTuesdayEvent') == true then
-                        return
-                    end
-                    if localPlayer:GetAttribute('hasStartedFarming') == false then
-                        return
-                    end
-                    if localPlayer:GetAttribute('StopFarmingTemp') == true then
-                        return
-                    end
-
-                    localPlayer:SetAttribute('StopFarmingTemp', true)
-                    Bypass('RouterClient').get('MinigameAPI/AttemptJoin'):FireServer('sleighball', true)
-                end
-            end)
-            StaticMap.star_catch_minigame_state.is_game_active:GetPropertyChangedSignal('Value'):Connect(function(
-            )
-                if StaticMap.star_catch_minigame_state.is_game_active.Value then
-                    if getgenv().SETTINGS.ENABLE_AUTO_FARM == false then
-                        return
-                    end
-                    if localPlayer:GetAttribute('IsTuesdayEvent') == true then
-                        return
-                    end
-                    if localPlayer:GetAttribute('hasStartedFarming') == false then
-                        return
-                    end
-                    if localPlayer:GetAttribute('StopFarmingTemp') == true then
-                        return
-                    end
-
-                    localPlayer:SetAttribute('StopFarmingTemp', true)
-                    Bypass('RouterClient').get('MinigameAPI/AttemptJoin'):FireServer('star_catch', true)
-                end
-            end)
         end
         function Christmas2025Handler.Start()
             tryCollectGingerbread()
