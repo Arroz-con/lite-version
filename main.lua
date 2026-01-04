@@ -4171,20 +4171,19 @@ do
             RouterClient.get('HousingAPI/SetDoorLocked'):InvokeServer(true)
             Utils.WaitForHumanoidRootPart()
             RouterClient.get('TeamAPI/ChooseTeam'):InvokeServer('Babies', {
-                ['dont_respawn'] = true,
+                ['dont_respawn'] = false,
             })
-            task.wait(5)
+            task.wait(1)
             Utils.WaitForHumanoidRootPart()
 
             local count = 0
 
             while true do
-                RouterClient.get('HousingAPI/SubscribeToHouse'):FireServer(Players.LocalPlayer)
-                task.wait(5)
-
                 if ClientData.get_data()[localPlayer.Name].house_interior.house_id then
                     break
                 end
+
+                RouterClient.get('HousingAPI/SubscribeToHouse'):FireServer(Players.LocalPlayer)
 
                 count = count + 5
 
@@ -4195,6 +4194,8 @@ do
 
                     return
                 end
+
+                task.wait(5)
             end
 
             Furniture.GetFurnituresKey()
