@@ -4173,9 +4173,8 @@ do
             RouterClient.get('TeamAPI/ChooseTeam'):InvokeServer('Babies', {
                 ['dont_respawn'] = true,
             })
-            task.wait(1)
+            task.wait(5)
             Utils.WaitForHumanoidRootPart()
-            task.wait(10)
 
             local count = 0
 
@@ -4186,7 +4185,7 @@ do
                     break
                 end
 
-                count = count + 1
+                count = count + 5
 
                 if count >= 60 then
                     Utils.PrintDebug(
@@ -4196,7 +4195,7 @@ do
                     return
                 end
 
-                task.wait(1)
+                task.wait(5)
             end
 
             Furniture.GetFurnituresKey()
