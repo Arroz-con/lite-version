@@ -4171,7 +4171,7 @@ do
             RouterClient.get('HousingAPI/SetDoorLocked'):InvokeServer(true)
             Utils.WaitForHumanoidRootPart()
             RouterClient.get('TeamAPI/ChooseTeam'):InvokeServer('Babies', {
-                ['dont_respawn'] = false,
+                ['dont_respawn'] = true,
             })
             task.wait(1)
             Utils.WaitForHumanoidRootPart()
@@ -4180,7 +4180,6 @@ do
 
             while true do
                 RouterClient.get('HousingAPI/SubscribeToHouse'):FireServer(Players.LocalPlayer)
-                task.wait(1)
 
                 if ClientData.get_data()[localPlayer.Name].house_interior.house_id then
                     break
@@ -4188,12 +4187,15 @@ do
 
                 count = count + 1
 
-                if count >= 30 then
+                if count >= 60 then
                     Utils.PrintDebug(
-[[Failed to subscribe to house after 30 seconds, trying again...]])
+[[Failed to subscribe to house after 60 seconds, trying again...]])
+                    localPlayer:Kick('Failed to subscribe to house')
 
-                    break
+                    return
                 end
+
+                task.wait(1)
             end
 
             Furniture.GetFurnituresKey()
@@ -11785,8 +11787,6 @@ Check the Developer Console for more information.]],
 
                     if not success then
                         print(string.format('\u{26d4} AutoFarm Errored: %s \u{26d4}', tostring(result)))
-
-                        return
                     end
 
                     task.wait(1)
