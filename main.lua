@@ -4180,6 +4180,7 @@ do
 
             while true do
                 RouterClient.get('HousingAPI/SubscribeToHouse'):FireServer(Players.LocalPlayer)
+                task.wait(5)
 
                 if ClientData.get_data()[localPlayer.Name].house_interior.house_id then
                     break
@@ -4194,8 +4195,6 @@ do
 
                     return
                 end
-
-                task.wait(5)
             end
 
             Furniture.GetFurnituresKey()
