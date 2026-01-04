@@ -11786,7 +11786,9 @@ Check the Developer Console for more information.]],
                     end)
 
                     if not success then
-                        print(string.format('\u{26d4} AutoFarm Errored: %s \u{26d4}', tostring(result)))
+                        localPlayer:Kick(string.format('\u{26d4} AutoFarm Errored: %s \u{26d4}', tostring(result)))
+
+                        return
                     end
 
                     task.wait(1)
