@@ -4175,6 +4175,7 @@ do
             })
             task.wait(1)
             Utils.WaitForHumanoidRootPart()
+            task.wait(10)
 
             local count = 0
 
