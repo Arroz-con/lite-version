@@ -4170,8 +4170,12 @@ do
             end
 
             findHomeButtonAndClick()
+
+            repeat
+                task.wait(1)
+            until ClientData.get_data()[localPlayer.Name].loaded_in == true
+
             RouterClient.get('HousingAPI/SetDoorLocked'):InvokeServer(true)
-            task.wait(2)
             Utils.WaitForHumanoidRootPart()
             RouterClient.get('TeamAPI/ChooseTeam'):InvokeServer('Babies', {
                 ['dont_respawn'] = false,
@@ -4188,7 +4192,7 @@ do
 
                 RouterClient.get('HousingAPI/SubscribeToHouse'):FireServer(Players.LocalPlayer)
 
-                count = count + 5
+                count = count + 10
 
                 if count >= 60 then
                     Utils.PrintDebug(
@@ -4198,7 +4202,7 @@ do
                     return
                 end
 
-                task.wait(5)
+                task.wait(10)
             end
 
             Furniture.GetFurnituresKey()
