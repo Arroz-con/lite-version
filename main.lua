@@ -586,6 +586,8 @@ do
                         Furniture.items['lures_2023_normal_lure'] = key
                     elseif value.id == 'ailments_refresh_2024_litter_box' then
                         Furniture.items['ailments_refresh_2024_litter_box'] = key
+                    else
+                        RouterClient.get('HousingAPI/SellFurniture'):FireServer(true, {key}, 'sell')
                     end
                 end
             end
@@ -4169,11 +4171,12 @@ do
 
             findHomeButtonAndClick()
             RouterClient.get('HousingAPI/SetDoorLocked'):InvokeServer(true)
+            task.wait(2)
             Utils.WaitForHumanoidRootPart()
             RouterClient.get('TeamAPI/ChooseTeam'):InvokeServer('Babies', {
                 ['dont_respawn'] = false,
             })
-            task.wait(1)
+            task.wait(2)
             Utils.WaitForHumanoidRootPart()
 
             local count = 0
